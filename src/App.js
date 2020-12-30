@@ -2,11 +2,18 @@ import './App.css';
 import React, {useEffect, useState} from 'react'
 import Login from './Login.js'
 import { getTokenFromUrl } from './Spotify';
+import SpotifyWebApi from 'spotify-web-api-js'
+import Player from './Player.js'
+import { useDataLayerValue } from "./DataLayer"
+
+const spotify = new SpotifyWebApi()
+
 
 function App() {
   const [token, setToken] = useState(null)
+  const [{}, dispatch] = useDataLayerValue();
 
-  //Run coe based on a given condition
+
   useEffect(() => {
     const hash = getTokenFromUrl();
     window.location.hash=""
@@ -15,6 +22,19 @@ function App() {
     //if token exist, set token state to be token
     if(_token){
       setToken(_token)
+
+      dispatch({
+        type: 'SET_USER',
+        user: user
+      })
+
+      //gives access token to spotify api
+      spotify.setAccessToken(_token)
+
+      //gets users account, returns a promise
+      spotify.getMe().then(user => {
+        console.log(user)
+      })
     }
   }, []);
 
@@ -26,7 +46,7 @@ function App() {
    <div className="app">
 
      {
-     token ?  <h1>logged in</h1> : <Login/>
+     token ? <Player/> : <Login/>
      }
  
    </div>
