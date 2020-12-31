@@ -1,0 +1,20 @@
+.sidebar {
+  height: 100vh;
+  flex: 0.2;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  /*use up full screen of available height */
+  height: 100vh;
+  min-width: 230px;
+  background-color: #040404;
+}
+
+.sidebar_logo {
+  /*keeps aspect ratio
+  object-fit: contain; */
+  height: 70px;
+  margin-right: auto;
+  padding: 10px;
+}

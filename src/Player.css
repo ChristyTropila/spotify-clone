@@ -1,0 +1,4 @@
+.player_body {
+  /*flex defaults to row*/
+  display: flex;
+}
