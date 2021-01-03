@@ -1,9 +1,30 @@
 .footer {
+  display: flex;
+  justify-content: space-between;
+  width: 97%;
   position: fixed;
   /*sick to bottom of page*/
   bottom: 0;
-  height: 60px;
+  height: 65px;
   width: 100%;
   background-color: #282828;
   padding: 20px;
+}
+
+.footer_left {
+  flex: 0.3;
+}
+
+.footer_center {
+  flex: 0.4;
+  padding: 0 100px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 300px;
+}
+
+.footer_right {
+  flex: 0.3;
 }

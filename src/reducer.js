@@ -3,9 +3,7 @@ export const initialState =  {
     playlists: [],
     playing: false,
     item: null,
-
-    //remove after developing chaange to null
-    token: "BQDPGyABqpjawP5pOQ6tACpURWp5AlKQiF0-SoGl4vxfF_XSDS…1ahKzsjnJ_aR8QJ-HkPVIPZI8FwDXq6e-kRuFEnO-MRT6KDFs"
+    token: "BQDtPahF7zJaep2zVtuf0v4y8UbZTdsvegwcb1T6lP48FGM4RS…xfTbkM4vLVH6UwdOF8lpD9gC4NPtM7OSyM0LVk3l70_JCbclk"
 }
 
 
@@ -24,6 +22,13 @@ const reducer = (state, action) => {
            ...state,
            token: action.token
        }
+
+    case 'SET_PLAYLISTS':
+        return {
+            ...state,
+            playlists: action.playlists
+        }  
+
    default: 
         return state;
  }
