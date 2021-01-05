@@ -13,8 +13,14 @@ function Footer() {
     return (
         <div className="footer">
          <div className="footer_left">
-           <p>album</p>
+         <img src="" alt="album cover" className="album_cover"/>
+         <div className="footer_songinfo">
+             <h4>yeah!</h4>
+             <p>usher </p>
          </div>
+         </div>
+
+
          <div className="footer_center">
           <ShuffleIcon className="footer_green"/>
           <SkipPreviousIcon className="footer_icon"/>
@@ -22,6 +28,8 @@ function Footer() {
           <SkipNextIcon className="footer_icon"/>
           <RepeatIcon className="footer_green"/>
          </div>
+
+
          <div className="footer_right">
           <Grid container spaceing={2}>
               <Grid item>
